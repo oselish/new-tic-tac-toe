@@ -3,8 +3,7 @@
 #include <typeinfo>
 #include <Windows.h>
 using namespace std;
-char* field = new char [10] {'0','1','2','3','4','5','6','7','8','9'};
-int counter = 0;
+char field[10] = {'0','1','2','3','4','5','6','7','8','9'};
 bool is_win()
 {
     char player;
@@ -82,5 +81,5 @@ int main()
         int o = int(O) - '0';
         field[o] = 'O';
         cout << endl;
-        }
+    }
 }
