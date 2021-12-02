@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 char field[10] = {'0','1','2','3','4','5','6','7','8','9'};
 bool is_win()
@@ -29,7 +30,7 @@ bool is_win()
             c++;
     if (c == 9)
     {
-        cout << "Ничья!" << endl;
+        cout << "\nНичья!" << endl;
         return true;
     }
     return false;
@@ -58,7 +59,13 @@ int main()
     while (true)
     {
         show_field();           // Отображение поля в консоли
-        if (is_win()) return 0; // И проверка поля
+        if (is_win())           // И проверка поля
+        {
+            for (int i = 0; i < 10; i++)
+                field[i] = to_string(i)[0];
+            cout << endl;
+            continue; 
+        }
         char X, O;
         //////////////////// Крестики ////////////////////
         do
@@ -69,7 +76,13 @@ int main()
         field[x] = 'X';
         cout << endl;
         show_field();           // Отображение поля в консоли
-        if (is_win()) return 0; // И проверка поля
+        if (is_win())           // И проверка поля
+        {
+            for (int i = 0; i < 10; i++)
+                field[i] = to_string(i)[0];
+            cout << endl;
+            continue;
+        }
         //////////////////// Нолики ////////////////////
         do
         {
